@@ -28,6 +28,10 @@ body {
   color: #B4B6B9;
 }
 
+.red {
+  color: #DB4640;
+}
+
 section {
   display: flex;
   flex-direction: column;

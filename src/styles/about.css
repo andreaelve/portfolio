@@ -1,0 +1,67 @@
+.about {
+    overflow: hidden;
+}
+
+.about_title-container {
+    display: flex;
+    width: 100%;
+    align-items: end;
+    justify-content: center;
+}
+
+.about_title {
+    position: relative;
+    font-family: 'Six Caps', sans-serif;
+    font-size: 4.5em;
+    font-weight: lighter;
+    letter-spacing: 0.03em;
+    line-height: 1em;
+    margin: 0;
+    width: 2.5em;
+}
+
+.about_hand-icon {
+    font-size: 5.5em;
+    margin: 0;
+}
+
+.about_text {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin: 0.5em 1em;
+    line-height: 1.4em;
+}
+
+.about_text::before {
+    content: '____________';
+    color: #1E2323;
+}
+
+.about_icon-container {
+    display: flex;
+    margin: 1.5em 0;
+}
+
+.about_icon {
+    height: 5em;
+    padding-left: 2em;
+}
+
+@media (min-width: 600px) {
+    .about {
+        max-width:70em;
+    }
+    
+    .about_title {
+        font-size: 7em;
+        width: auto;
+    }
+    
+    .about_hand-icon {
+        margin-left: 0.5em;
+    }
+    
+    .about_text {
+        width: 20em;
+    }
+}
