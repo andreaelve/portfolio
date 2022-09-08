@@ -1,0 +1,95 @@
+.work_title {
+    font-size: 4.5em;
+    margin: 0;
+    font-family: 'Six Caps', sans-serif;
+    font-weight: lighter;
+}
+
+.work_project-container {
+    max-width: 90vw;
+}
+
+.project_title-container {
+    display: flex;
+    align-items: end;
+}
+
+.project_num {
+    font-size: 3em;
+    font-family: 'Michroma', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 2px #C9C6B5;
+    margin: 0;
+    line-height: 1em;
+}
+
+.project_title {
+    font-weight: lighter;
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 1em;
+}
+
+.project_text {
+    margin: 0.1em 0;
+    max-width: 28em;
+}
+
+.project_text::before {
+    content: '____________';
+    color: transparent;
+}
+
+.project_date {
+    font-size: 0.7em;
+}
+
+.project_btn {
+    padding: 0.2em 0.4em;
+    border-radius: 8px;
+    margin: 0 0.2em;
+    font-weight: bold;
+}
+
+.none {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .work {
+        margin: 0 3em;
+    }
+
+    .work_title {
+        font-size: 8em;
+    }
+
+    .project_num {
+        font-size: 7em;
+    }
+
+    .project_title {
+        font-size: 5.5vw;
+    }
+
+    .project_text {
+        font-size: 1.4em;
+    }
+
+    .project_btn {
+        font-size: 1.1em;
+    }
+
+    .project-left {
+        align-self: flex-start;
+    }
+
+    .project-right {
+        text-align: right;
+        align-self: flex-end;
+    }
+
+    .project-right .project_title-container {
+        flex-direction: row-reverse;
+    }
+}

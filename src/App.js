@@ -3,17 +3,16 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Work from './components/Work';
+import Contact from './components/Contact';
 
 function App() {
   return (
     <div className="App">
-      <header className="header">
-        <p className="header_name">Andrea Elvegård</p>
-        <Navbar />
-      </header>
+      <Navbar />
       <Home />
       <About />
       <Work />
+      <Contact />
     </div>
   );
 }

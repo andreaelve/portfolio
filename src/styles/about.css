@@ -1,5 +1,6 @@
 .about {
     overflow: hidden;
+    justify-content: center;
 }
 
 .about_title-container {
@@ -39,18 +40,15 @@
 
 .about_icon-container {
     display: flex;
-    margin: 1.5em 0;
+    margin: 8.5vw 0;
 }
 
 .about_icon {
-    height: 5em;
+    height: 6em;
     padding-left: 2em;
 }
 
 @media (min-width: 600px) {
-    .about {
-        max-width:70em;
-    }
     
     .about_title {
         font-size: 7em;
