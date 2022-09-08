@@ -12,7 +12,7 @@ function Navbar() {
         <a className="nav_link" href="#about">About</a>
         <a className="nav_link" href="#work">Projects</a>
         <a className="nav_link" href="#contact">Contact</a>
-        <a className="nav_link" href="#" onClick={openCV}>CV</a>
+        <a className="nav_link" onClick={openCV}>CV</a>
     </nav>
   );
 }
