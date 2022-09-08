@@ -10,13 +10,13 @@ function Contact() {
 
     const handleClick = e => {
         console.log('hei', e)
-        if(e.target == linkedinLink.current){
+        if(e.target === linkedinLink.current){
             window.open('https://www.linkedin.com/in/andrea-elveg%C3%A5rd-4a9930192/');
         } 
-        if(e.target == githubLink.current){
+        if(e.target === githubLink.current){
             window.open('https://github.com/andreaelve');
         } 
-        if(e.target == mailLink.current) {
+        if(e.target === mailLink.current) {
             console.log('hei')
             navigator.clipboard.writeText('andrea.elvegaard@yahoo.no');
         }
@@ -32,15 +32,15 @@ function Contact() {
             <div className="contact_list">
                 <div onClick={handleClick} className='contact_list-group'>
                     <p ref={linkedinLink} className='contact_link'>LINKEDIN</p>
-                    <img className='contact_icon' src={linkedInFig}/>
+                    <img alt="linkedin icon" className='contact_icon' src={linkedInFig}/>
                 </div>
                 <div onClick={handleClick} className='contact_list-group'>
                     <p ref={githubLink} className='contact_link'>GITHUB</p>
-                    <img className='contact_icon' src={githubFig} />
+                    <img alt="github icon" className='contact_icon' src={githubFig} />
                 </div>
                 <div onClick={handleClick} className='contact_list-group'>
                     <p ref={mailLink} className='contact_link'>EMAIL</p>
-                    <img className='contact_icon' src={mailFig}/>
+                    <img alt="e-mail icon" className='contact_icon' src={mailFig}/>
                 </div>
             </div>
         </section>
