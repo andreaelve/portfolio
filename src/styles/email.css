@@ -1,0 +1,44 @@
+.email {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.email_title {
+    font-size: 7em;
+    font-family: 'Six Caps';
+    font-weight: lighter;
+    line-height: 1em;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.email_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email_label {
+    color: #B4B6B9;
+    margin: 1.5em 0 0.5em 0;
+}
+
+.email_input {
+    font-size: 1em;
+    color: #B4B6B9;
+    background-color: transparent;
+    border: 0.1px solid #B4B6B9;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+.email_btn {
+    background-color: #B4B6B9;
+    width: fit-content;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    align-self: center;
+    margin: 1em;
+}
+

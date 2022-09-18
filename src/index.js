@@ -5,13 +5,32 @@ import './styles/home.css';
 import './styles/about.css';
 import './styles/work.css';
 import './styles/contact.css';
-import App from './App';
+import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import ErrorPage from "./routes/ErrorPage";
+import EmailPage from './routes/EmailPage';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/email",
+    element: <EmailPage />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
