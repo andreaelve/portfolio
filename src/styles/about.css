@@ -6,7 +6,7 @@
 .about_title-container {
     display: flex;
     width: 100%;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
 }
 
