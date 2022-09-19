@@ -2,6 +2,7 @@ import linkedInFig from '../assets/linkedin.png';
 import githubFig from '../assets/github.png';
 import mailFig from '../assets/mail.png';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 function Contact() {
     const linkedinLink = useRef(null);
@@ -39,7 +40,7 @@ function Contact() {
                     <img alt="github icon" className='contact_icon' src={githubFig} />
                 </div>
                 <div onClick={handleClick} className='contact_list-group'>
-                    <p ref={mailLink} className='contact_link'>EMAIL</p>
+                    <Link to="/email" className="contact_link-email" ><p ref={mailLink} className='contact_link'>EMAIL</p></Link>
                     <img alt="e-mail icon" className='contact_icon' src={mailFig}/>
                 </div>
             </div>
