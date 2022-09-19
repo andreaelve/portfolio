@@ -56,6 +56,10 @@ section {
   padding: 0.2em 1em;
 }
 
+p.nav_link {
+  margin: 0;
+}
+
 @media (min-width: 600px) {
   body {
     font-size: 1.2vw;

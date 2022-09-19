@@ -31,17 +31,17 @@ function EmailPage() {
     const message = messageRef.current.value;
     let send = true;
 
-    if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
+    if(!(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
       emailRef.current.value = "";
       emailRef.current.placeholder = "Please enter a valid email address."
       send = false;
     }
-    if(name == null || name == ""){
+    if(name === null || name === ""){
       nameRef.current.value = "";
       nameRef.current.placeholder = "Please enter a name."
       send = false;
     }
-    if(message == null || message == ""){
+    if(message === null || message === ""){
       messageRef.current.value = "";
       messageRef.current.placeholder = "Please enter a message.";
       send = false;

@@ -1,5 +1,5 @@
 import MyCv from '../assets/cv.pdf';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 function Navbar() {
@@ -16,7 +16,7 @@ function Navbar() {
         <HashLink className="nav_link" to="/#work">Projects</HashLink>
         <HashLink className="nav_link" to="/#contact">Contact</HashLink>
         <Link className="nav_link" to="/email" >Email</Link>
-        <a className="nav_link" onClick={openCV}>CV</a>
+        <p className="nav_link" onClick={openCV}>CV</p>
     </nav>
   );
 }
