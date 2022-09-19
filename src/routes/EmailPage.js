@@ -5,49 +5,49 @@ import emailjs from '@emailjs/browser';
 
 function EmailPage() {
   const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
-    const nameRef = useRef(null);
-    const emailRef = useRef(null);
-    const messageRef = useRef(null);
-    const formRef = useRef(null);
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
+  const formRef = useRef(null);
 
-    const handleSend = (name, email, message) => {
-      const templateParams = {
-        name,
-        email,
-        message
-      }
-
-      emailjs.send('service_jvmuwrl', 'template_qqwplxp', templateParams, publicKey)
-        .then(res => console.log('SUCCESS!', res.status, res.text))
-        .catch(err => console.log('FAILED...', err));
-
-      formRef.current.reset();
+  const handleSend = (name, email, message) => {
+    const templateParams = {
+      name,
+      email,
+      message
     }
+
+    emailjs.send('service_jvmuwrl', 'template_qqwplxp', templateParams, publicKey)
+      .then(res => console.log('SUCCESS!', res.status, res.text))
+      .catch(err => console.log('FAILED...', err));
+
+    formRef.current.reset();
+  }
     
-    const validateInput = (e) => {
-      e.preventDefault();
-      const name = nameRef.current.value;
-      const email = emailRef.current.value;
-      const message = messageRef.current.value;
-      let send = true;
+  const validateInput = (e) => {
+    e.preventDefault();
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const message = messageRef.current.value;
+    let send = true;
 
-      if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
-        emailRef.current.value = "";
-        emailRef.current.placeholder = "Please enter a valid email address."
-        send = false;
-      }
-      if(name == null || name == ""){
-        nameRef.current.value = "";
-        nameRef.current.placeholder = "Please enter a name."
-        send = false;
-      }
-      if(message == null || message == ""){
-        messageRef.current.value = "";
-        messageRef.current.placeholder = "Please enter a message.";
-        send = false;
-      }
+    if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
+      emailRef.current.value = "";
+      emailRef.current.placeholder = "Please enter a valid email address."
+      send = false;
+    }
+    if(name == null || name == ""){
+      nameRef.current.value = "";
+      nameRef.current.placeholder = "Please enter a name."
+      send = false;
+    }
+    if(message == null || message == ""){
+      messageRef.current.value = "";
+      messageRef.current.placeholder = "Please enter a message.";
+      send = false;
+    }
 
-      if(send) handleSend(name, email, message);
+    if(send) handleSend(name, email, message);
     }
 
   return (
