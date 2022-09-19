@@ -4,7 +4,7 @@ import '../styles/email.css';
 import emailjs from '@emailjs/browser';
 
 function EmailPage() {
-  const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+  // const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
@@ -17,8 +17,8 @@ function EmailPage() {
       message
     }
 
-    emailjs.send('service_jvmuwrl', 'template_qqwplxp', templateParams, publicKey)
-      .then(res => console.log('SUCCESS!', res.status, res.text))
+    emailjs.send('service_jvmuwrl', 'template_qqwplxp', templateParams, 'wBrSPWI5i86rQiJL4')
+      // .then(res => console.log('SUCCESS!', res.status, res.text))
       .catch(err => console.log('FAILED...', err));
 
     formRef.current.reset();
