@@ -16,6 +16,12 @@
 .email_form {
     display: flex;
     flex-direction: column;
+    margin: 0 1em;
+}
+
+.email_input-group {
+    display: flex;
+    flex-direction: column;
 }
 
 .email_label {
@@ -23,13 +29,34 @@
     margin: 1.5em 0 0.5em 0;
 }
 
-.email_input {
+.email_input,
+.email_input-large {
     font-size: 1em;
     color: #B4B6B9;
     background-color: transparent;
     border: 0.1px solid #B4B6B9;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 0.5em;
+}
+
+.email_input:focus,
+.email_input-large:focus {
+    outline: 1px solid #B4B6B9;
+    background-color: transparent;
+}
+
+*:-webkit-autofill,
+*:-webkit-autofill:hover,
+*:-webkit-autofill:focus,
+*:-webkit-autofill:active {
+    transition: all 5000s ease-in-out 0s;
+    transition-property: #1E2323, color;
+    -webkit-text-fill-color: #B4B6B9;
+}
+
+.email_input-large {
+    min-height: 8em;
+    font-family: Inter;
 }
 
 .email_btn {
@@ -40,5 +67,53 @@
     font-weight: bold;
     align-self: center;
     margin: 1em;
+    font-size: 1em;
 }
 
+@media (min-width: 600px) {
+    .email {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .email_title {
+        position: absolute;
+        font-size: 15em;
+        text-align: left;
+        width: 2.5em;
+        left: 0.5em;
+        top: 0em;
+    }
+
+    .email_form-container {
+        position: absolute;
+        right: 6.5em;
+        top: 25em;
+    }
+
+    .email_form {
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 45vw;
+        justify-content: space-between;
+    }
+
+    .email_input {
+        width: 20vw;
+    }
+
+    .email_input-large {
+        width: 45vw;
+    }
+
+    .email_btn {
+        position: absolute;
+        justify-self: center;
+        right: -1em;
+        bottom: -5em;
+    }
+}
