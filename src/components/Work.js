@@ -8,7 +8,7 @@ function Work() {
 
     useEffect(() => {
         const octokit = new Octokit({
-            auth: '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'
+            auth: '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'
         });
         
         octokit.request('GET /users/{username}/repos', {
