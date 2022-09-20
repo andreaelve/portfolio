@@ -33,22 +33,29 @@ function EmailPage() {
 
     if(!(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
       emailRef.current.value = "";
+      emailRef.current.classList.add("email_input-wrong");
       emailRef.current.placeholder = "Please enter a valid email address."
       send = false;
     }
     if(name === null || name === ""){
       nameRef.current.value = "";
+      nameRef.current.classList.add("email_input-wrong");
       nameRef.current.placeholder = "Please enter a name."
       send = false;
     }
     if(message === null || message === ""){
       messageRef.current.value = "";
+      messageRef.current.classList.add("email_input-wrong");
       messageRef.current.placeholder = "Please enter a message.";
       send = false;
     }
 
     if(send) handleSend(name, email, message);
-    }
+  }
+
+  const removeWrongInputColor = e => {
+    e.target.classList.contains('email_input-wrong') && e.target.classList.remove('email_input-wrong');
+  }
 
   return (
     <>
@@ -64,6 +71,7 @@ function EmailPage() {
         <input 
             type="text"
             placeholder="Firstname Lastname" 
+            onChange={removeWrongInputColor}
             className="email_input"
             ref={nameRef}
         />
@@ -73,6 +81,7 @@ function EmailPage() {
         <input 
             type="email"
             name="email"
+            onChange={removeWrongInputColor}
             placeholder="example@email.com" 
             className="email_input"
             ref={emailRef}
@@ -82,6 +91,7 @@ function EmailPage() {
         <textarea 
             type="text"
             placeholder="What can I help you with?" 
+            onChange={removeWrongInputColor}
             className="email_input-large"
             ref={messageRef}
         />
