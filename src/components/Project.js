@@ -1,5 +1,4 @@
 function Project({ title, description, updatedAt, githubUrl, liveUrl, index, right }) {
-    if(liveUrl !== null && liveUrl !== "") console.log(liveUrl);
     return (
         <div className={`work_project-container ${right ? 'project-right' : 'project-left'}`}>
             <div className="project_title-container">
