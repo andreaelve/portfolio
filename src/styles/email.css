@@ -39,6 +39,10 @@
     border-radius: 0.5em;
 }
 
+.email_input-wrong {
+    border-color: #db45407e;
+}
+
 .email_input:focus,
 .email_input-large:focus {
     outline: 1px solid #B4B6B9;
@@ -80,18 +84,18 @@
     }
 
     .email_title {
-        position: absolute;
+        position: relative;
         font-size: 15em;
         text-align: left;
         width: 2.5em;
-        left: 0.5em;
-        top: 0em;
+        left: 0.3em;
+        top: -0.5em;
     }
 
     .email_form-container {
-        position: absolute;
-        right: 6.5em;
-        top: 25em;
+        position: relative;
+        right: 3.5em;
+        top: 5em;
     }
 
     .email_form {
