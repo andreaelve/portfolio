@@ -8,15 +8,15 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
-      },
-      {
         "source": "/github",
         "run": {
           "serviceId": "portfolio-backend",
           "region": "europe-north1"
         }
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
