@@ -1,5 +1,4 @@
 import Project from "./Project";
-import { Octokit } from "octokit";
 import { useState, useEffect } from "react";
 
 function Work() {
@@ -7,14 +6,9 @@ function Work() {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        const octokit = new Octokit({
-            auth: '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'
-        });
-        
-        octokit.request('GET /users/{username}/repos', {
-            username: 'andreaelve'
-        })
-            .then(res => res.data)
+        fetch('github')
+            .then(data => data.json())
+            .then(data => data.data)
             .then(data => {
                 let right = true;
                 let usefulProjectData = data
