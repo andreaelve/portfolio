@@ -13,18 +13,19 @@ function Work() {
                 let right = true;
                 let usefulProjectData = data
                     .filter(el => el.name !== 'saltstudy-invite')
+                    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
                     .map((el, i) => {
+                        console.log(el);
                     right = !right;
                     return { 
                         github: el.html_url, 
                         title: el.name,
                         liveLink: el.homepage,
                         description: el.description, 
-                        lastUpdated: el.updated_at,
+                        createdAt: el.created_at,
                         index: `0${i+1}`,
                         right: right
-                    }
-                });
+                    }});
                 setProjects(usefulProjectData);
             })
             .then(() => setLoading(false))
@@ -49,7 +50,7 @@ function Work() {
                         key={el.index}
                         title={el.title} 
                         description={el.description} 
-                        updatedAt={el.lastUpdated} 
+                        createdAt={el.createdAt} 
                         githubUrl={el.github} 
                         liveUrl={el.liveLink} 
                         index={el.index} 
