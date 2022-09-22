@@ -7,11 +7,30 @@
 
 .work_project-container {
     max-width: 90vw;
+    margin: 0.7em 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .project_title-container {
     display: flex;
     align-items: flex-end;
+    margin: 0 0 0.5em 0;
+}
+
+.project-right .project_title-container {
+    flex-direction: row-reverse;
+}
+
+.project-right .project_text,
+.project-right .project_date{
+    align-self: flex-end;
+}
+
+.project-right > .project_btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .project_num {
@@ -28,6 +47,7 @@
     font-size: 1.5em;
     margin: 0;
     line-height: 1em;
+    text-transform: capitalize;
 }
 
 .project_text {
@@ -35,13 +55,9 @@
     max-width: 28em;
 }
 
-.project_text::before {
-    content: '____________';
-    color: transparent;
-}
-
 .project_date {
     font-size: 0.7em;
+    color: #c9c6b5a6;
 }
 
 .project_btn {
@@ -49,15 +65,26 @@
     border-radius: 8px;
     margin: 0 0.2em;
     font-weight: bold;
+    width: fit-content;
+    cursor: pointer;
 }
 
 .none {
     display: none;
 }
 
+.project-right {
+    text-align: right;
+    align-self: flex-end;
+}
+
 @media (min-width: 600px) {
     .work {
         margin: 0 3em;
+    }
+
+    .work_project-container {
+        margin: 0;
     }
 
     .work_title {
@@ -82,14 +109,5 @@
 
     .project-left {
         align-self: flex-start;
-    }
-
-    .project-right {
-        text-align: right;
-        align-self: flex-end;
-    }
-
-    .project-right .project_title-container {
-        flex-direction: row-reverse;
     }
 }

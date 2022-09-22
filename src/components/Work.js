@@ -1,24 +1,60 @@
 import Project from "./Project";
+import { useState, useEffect } from "react";
 
 function Work() {
+    const [loading, setLoading] = useState(true);
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        fetch('github')
+            .then(data => data.json())
+            .then(data => data.data)
+            .then(data => {
+                let right = true;
+                let usefulProjectData = data
+                    .filter(el => el.name !== 'saltstudy-invite')
+                    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+                    .map((el, i) => {
+                    right = !right;
+                    return { 
+                        github: el.html_url, 
+                        title: el.name,
+                        liveLink: el.homepage,
+                        description: el.description, 
+                        createdAt: el.created_at,
+                        index: `0${i+1}`,
+                        right: right
+                    }});
+                setProjects(usefulProjectData);
+            })
+            .then(() => setLoading(false))
+            .catch(err => console.log(err));
+    }, []);
+
+    if(loading){
+        return (
+            <section className="work" id="work">
+                 <h2 className="work_title">RECENT PROJECTS</h2>
+                 <p>Loading...</p>
+            </section>
+        )
+    }
+
     return (
         <section className="work" id="work">
             <h2 className="work_title">RECENT PROJECTS</h2>
-            <Project />
-            <div className="work_project-container project-right">
-            <div className="project_title-container">
-                <p className="project_num">02</p>
-                <h3 className="project_title gray">Authentication</h3>
-            </div>
-            <p className="project_text gray">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu ultricies leo. Proin laoreet lectus ut ligula condimentum, a bibendum magna interdum.
-            </p>
-            <p className="project_date gray">
-                10. Aug 2022
-            </p>
-            <button className="project_btn none">LIVE</button>
-            <button className="project_btn">GITHUB</button>
-        </div>
+            {projects.map(el => {
+                return (
+                    <Project 
+                        key={el.index}
+                        title={el.title} 
+                        description={el.description} 
+                        createdAt={el.createdAt} 
+                        githubUrl={el.github} 
+                        liveUrl={el.liveLink} 
+                        index={el.index} 
+                        right={el.right}/>)
+            })}
         </section>
     )
 }

@@ -60,6 +60,11 @@ p.nav_link {
   margin: 0;
 }
 
+.nav_link:hover {
+  cursor: pointer;
+  color: #DB4640;
+}
+
 @media (min-width: 600px) {
   body {
     font-size: 1.2vw;
@@ -91,6 +96,8 @@ p.nav_link {
 
   .nav_open {
       right: 1em;
+      align-content: flex-end;
+      width: fit-content;
   }
 
   .nav_link {

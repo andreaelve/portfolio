@@ -10,7 +10,6 @@ import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
 } from "react-router-dom";
 import ErrorPage from "./routes/ErrorPage";
 import EmailPage from './routes/EmailPage';

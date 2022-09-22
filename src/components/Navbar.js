@@ -10,7 +10,6 @@ function Navbar() {
 
   return (
     <nav className="nav nav_open">
-        {/* <a className="nav_link" href="#home">Home</a> */}
         <HashLink className="nav_link" to="/#home" >Home</HashLink>
         <HashLink className="nav_link" to="/#about">About</HashLink>
         <HashLink className="nav_link" to="/#work">Projects</HashLink>
