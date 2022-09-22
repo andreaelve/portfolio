@@ -15,7 +15,6 @@ function Work() {
                     .filter(el => el.name !== 'saltstudy-invite')
                     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
                     .map((el, i) => {
-                        console.log(el);
                     right = !right;
                     return { 
                         github: el.html_url, 
