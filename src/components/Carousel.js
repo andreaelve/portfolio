@@ -5,7 +5,6 @@ function Carousel( { children } ) {
     const outerRef = useRef(null);
     const innerRef = useRef(null);
     const [looperInstances, setLooperInstances] = useState(1);
-    const [iconList, setIconList] = useState([[...children]]);
 
     const setupInstances = useCallback(() => {
         if (!innerRef?.current || !outerRef?.current) return;
@@ -26,7 +25,7 @@ function Carousel( { children } ) {
             if (innerRef?.current) {
               innerRef.current.setAttribute("data-animate", "true");
             }
-          }, 20);
+          }, 25);
         }
       }
 
@@ -35,12 +34,12 @@ function Carousel( { children } ) {
     }, []);
 
     return (
-        <div className="looper" ref={outerRef}>
-          <div className="looper__innerList" ref={innerRef}>
+        <div className="carousel" ref={outerRef}>
+          <div className="carousel_innerList" ref={innerRef}>
           {[...Array(looperInstances)].map((_, i) => (
             <div
               key={i}
-              className="looper__listInstance"
+              className="carousel_listInstance"
             >
               {children}
             </div>

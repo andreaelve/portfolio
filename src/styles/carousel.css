@@ -3,17 +3,17 @@
     animation: scroll 25s linear infinite;
 }
 
-.looper__innerList {
+.carousel_innerList {
     display: flex;
     justify-content: center;
     width: fit-content;
 }
 
-.looper__innerList[data-animate="true"] .looper__listInstance {
+.carousel_innerList[data-animate="true"] .carousel_listInstance {
     animation: scroll 25s linear infinite;
 }
   
-.looper__listInstance {
+.carousel_listInstance {
     display: flex;
     width: max-content;
     padding-top: 5em;
