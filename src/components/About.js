@@ -1,17 +1,13 @@
-import Carousel from './Carousel'
-import VsFig from '../assets/vscode.png'
-import CssFig from '../assets/css.png'
-import FirebaseFig from '../assets/firebase.png'
-import GithubFig from '../assets/github.png'
-import HtmlFig from '../assets/html.png'
-import JsFig from '../assets/javascript.png'
-import KotlinFig from '../assets/kotlin.png'
-import MongoFig from '../assets/mongo.png'
-import NodeFig from '../assets/node.png'
-import ReactFig from '../assets/react.png'
-import TsFig from '../assets/typescript.png'
+import Carousel from "./Carousel";
 
-function About() {
+const About = () => {
+  const importAll = images => {
+    let icons = [];
+    images.keys().forEach(item => icons.push(item.replace('./', '')));
+    return icons;
+  }
+  const images = importAll(require.context('../assets/icon', false, /\.(png|jpe?g|svg)$/));
+
     return (
       <section className="about" id="about">
         <div className='about_title-container'>
@@ -25,20 +21,8 @@ function About() {
         <p className='about_text'>
           I'm currently employed as a consultant at Salt, and I'm continuously working towards widening my knowledge and <span className="red">improving</span> my skillset. 
         </p>
-        <Carousel 
-          show={9}
-          infiniteLoop={true}>
-          <img alt="vscode icon" className='about_icon' src={VsFig} />
-          <img alt="css icon icon" className='about_icon' src={CssFig} />
-          <img alt="firebase icon" className='about_icon' src={FirebaseFig} />
-          <img alt="html icon" className='about_icon' src={HtmlFig} />
-          <img alt="github icon" className='about_icon' src={GithubFig} />
-          <img alt="javascript icon" className='about_icon' src={JsFig} />
-          <img alt="kotlin icon" className='about_icon' src={KotlinFig} />
-          <img alt="mongodb icon" className='about_icon' src={MongoFig} />
-          <img alt="node.js icon" className='about_icon' src={NodeFig} />
-          <img alt="react icon" className='about_icon' src={ReactFig} />
-          <img alt="typescript icon" className='about_icon' src={TsFig} />
+        <Carousel>
+          {images.map((el, i) => <img className="about_icon" key={i} alt={el} src={require(`../assets/icon/${el}`)}/>)}
         </Carousel>
       </section>
     );

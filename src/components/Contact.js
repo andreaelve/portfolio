@@ -1,5 +1,5 @@
 import linkedInFig from '../assets/linkedin.png';
-import githubFig from '../assets/github.png';
+import githubFig from '../assets/icon/github.png';
 import mailFig from '../assets/mail.png';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';

@@ -66,4 +66,9 @@
     .about_icon {
         height: 10em;
     }
+
+    .about_icon:hover {
+        transform: scale(1.2);
+        transition: transform 200ms;
+    }
 }
