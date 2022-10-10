@@ -1,3 +1,4 @@
+import Carousel from './Carousel'
 import VsFig from '../assets/vscode.png'
 import CssFig from '../assets/css.png'
 import FirebaseFig from '../assets/firebase.png'
@@ -24,7 +25,9 @@ function About() {
         <p className='about_text'>
           I'm currently employed as a consultant at Salt, and I'm continuously working towards widening my knowledge and <span className="red">improving</span> my skillset. 
         </p>
-        <div className="about_icon-container">
+        <Carousel 
+          show={9}
+          infiniteLoop={true}>
           <img alt="vscode icon" className='about_icon' src={VsFig} />
           <img alt="css icon icon" className='about_icon' src={CssFig} />
           <img alt="firebase icon" className='about_icon' src={FirebaseFig} />
@@ -36,7 +39,7 @@ function About() {
           <img alt="node.js icon" className='about_icon' src={NodeFig} />
           <img alt="react icon" className='about_icon' src={ReactFig} />
           <img alt="typescript icon" className='about_icon' src={TsFig} />
-        </div>
+        </Carousel>
       </section>
     );
   }

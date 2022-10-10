@@ -44,7 +44,7 @@
 }
 
 .about_icon {
-    height: 6em;
+    height: 5em;
     padding-left: 2em;
 }
 
@@ -61,5 +61,9 @@
     
     .about_text {
         width: 30em;
+    }
+
+    .about_icon {
+        height: 12em;
     }
 }
