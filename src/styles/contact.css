@@ -18,6 +18,7 @@
     position: absolute;
     background-color: #B4B6B9;
     opacity: 0.4;
+    animation: grow 7s ease infinite;
 }
 
 .contact_circle-red {
@@ -30,6 +31,7 @@
     position: absolute;
     background-color: #DB4640;
     opacity: 0.7;
+    animation: grow 9s ease infinite;
 }
 
 .contact_title {
@@ -64,6 +66,7 @@
 
 .contact_link:hover {
     color: #DB4640;
+    transition: color 200ms;
 } 
 
 .contact_icon {
@@ -109,5 +112,23 @@
 
     .contact_icon {
         width: 4em;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(0.93);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
     }
 }

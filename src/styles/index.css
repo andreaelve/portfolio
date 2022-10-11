@@ -63,6 +63,7 @@ p.nav_link {
 .nav_link:hover {
   cursor: pointer;
   color: #DB4640;
+  transition: color 200ms;
 }
 
 @media (min-width: 600px) {
